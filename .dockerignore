@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+.dockerignore
+
+# Documentación
+*.md
+LICENSE
+
+# Scripts
+build.sh
+build.ps1
+
+# Logs y temporales
+*.log
+.npm
+
+# Sistema
+.DS_Store
+Thumbs.db
+

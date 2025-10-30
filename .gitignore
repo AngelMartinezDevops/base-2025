@@ -1,0 +1,22 @@
+# Logs
+*.log
+logs/
+
+# Sistema
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporales
+*.tmp
+*.temp
+.cache/
+
