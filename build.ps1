@@ -5,7 +5,7 @@ Write-Host ""
 
 # Información
 $IMAGE_NAME = "b3lerofonte/base"
-$TAG = "nodejs-20-steamcmd-ubuntu-24.04"
+$TAG = "nodejs-20-steamcmd-ubuntu-22.04"
 
 # Construir imagen
 Write-Host "📦 Construyendo imagen: $IMAGE_NAME" -ForegroundColor Yellow

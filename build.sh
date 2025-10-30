@@ -6,7 +6,7 @@ echo ""
 
 # Información
 IMAGE_NAME="b3lerofonte/base"
-TAG="nodejs-20-steamcmd-ubuntu-24.04"
+TAG="nodejs-20-steamcmd-ubuntu-22.04"
 
 # Construir con múltiples tags
 echo "📦 Construyendo imagen: ${IMAGE_NAME}"

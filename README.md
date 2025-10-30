@@ -1,11 +1,11 @@
-# 🐳 Base Docker Image - Ubuntu 24.04 + Node.js 20 + SteamCMD
+# 🐳 Base Docker Image - Ubuntu 22.04 + Node.js 20 + SteamCMD
 
 Imagen base modernizada para servidores de juegos, específicamente optimizada para Rust Server.
 
 ## 📦 Componentes Incluidos
 
 ### Sistema Operativo
-- **Ubuntu 24.04 LTS** - Soporte hasta 2029
+- **Ubuntu 22.04 LTS** - Soporte hasta 2027, compatible con SteamCMD
 
 ### Runtime y Herramientas
 - **Node.js 20 LTS** - Última versión de largo soporte
@@ -25,7 +25,10 @@ Imagen base modernizada para servidores de juegos, específicamente optimizada p
 
 ```bash
 # Tag con versiones específicas
-docker pull b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04
+docker pull b3lerofonte/base:nodejs-20-steamcmd-ubuntu-22.04
+
+# Tag latest (apunta a Ubuntu 22.04)
+docker pull b3lerofonte/base:latest
 ```
 
 ## 🚀 Uso
@@ -33,7 +36,7 @@ docker pull b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04
 ### Como Imagen Base para tu Dockerfile
 
 ```dockerfile
-FROM b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04
+FROM b3lerofonte/base:nodejs-20-steamcmd-ubuntu-22.04
 
 # Tu configuración aquí
 COPY mi-app /app/
@@ -48,23 +51,23 @@ CMD ["node", "server.js"]
 ```bash
 git clone https://github.com/AngelMartinezDevops/base-2025.git
 cd base-2025
-docker build -t b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04 .
+docker build -t b3lerofonte/base:nodejs-20-steamcmd-ubuntu-22.04 .
 ```
 
 ## 📊 Especificaciones
 
 | Componente | Versión | Notas |
 |-----------|---------|-------|
-| Ubuntu | 24.04 LTS | Noble Numbat |
+| Ubuntu | 22.04 LTS | Jammy Jellyfish |
 | Node.js | 20.x LTS | Iron |
-| Python | 3.12 | Nativo de Ubuntu 24.04 |
-| SteamCMD | Latest | Auto-actualizable |
-| Nginx | 1.24+ | Incluido en Ubuntu 24.04 |
+| Python | 3.10 | Nativo de Ubuntu 22.04 |
+| SteamCMD | Latest | Auto-actualizable, compatible |
+| Nginx | 1.18+ | Incluido en Ubuntu 22.04 |
 
 ## 🔧 Configuración
 
 ### Usuarios y Permisos
-- **Usuario**: `docker` (UID: 1001, GID: 1001)
+- **Usuario**: `docker` (UID: 1000, GID: 1000)
 - **Directorio home**: `/app`
 - **Shell**: `/bin/bash`
 
@@ -88,8 +91,8 @@ LANG=en_US.UTF-8
 LANGUAGE=en_US.UTF-8
 TERM=xterm
 TZ=Etc/UTC
-PGID=1001
-PUID=1001
+PGID=1000
+PUID=1000
 CHOWN_DIRS="/app,/steamcmd,/usr/share/nginx/html,/var/log/nginx"
 ```
 
@@ -97,12 +100,12 @@ CHOWN_DIRS="/app,/steamcmd,/usr/share/nginx/html,/var/log/nginx"
 
 | Original (didstopia/base) | Modernizada (base-2025) |
 |--------------------------|-------------------------|
-| Ubuntu 18.04 | **Ubuntu 24.04 LTS** |
+| Ubuntu 18.04 | **Ubuntu 22.04 LTS** |
 | Node.js 12 | **Node.js 20 LTS** |
-| Python 2 (python-dev) | **Python 3.12** |
+| Python 2 (python-dev) | **Python 3.10** |
 | lib32gcc1 | **lib32gcc-s1** |
 | bsdtar | **libarchive-tools** |
-| UID/GID 1000:1000 | **UID/GID 1001:1001** |
+| UID/GID 1000:1000 | **UID/GID 1000:1000** (sin cambios) |
 
 ## 🔄 Uso con rust-server-2025
 
@@ -110,7 +113,7 @@ Esta imagen base está diseñada para ser usada con:
 - [rust-server-2025](https://github.com/AngelMartinezDevops/rust-server-2025)
 
 ```dockerfile
-FROM b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04
+FROM b3lerofonte/base:nodejs-20-steamcmd-ubuntu-22.04
 
 # Configuración específica del servidor Rust
 COPY apps/ /app/

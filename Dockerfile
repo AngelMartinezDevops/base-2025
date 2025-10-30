@@ -2,9 +2,9 @@
 # Solo Ubuntu + Node.js + SteamCMD + Nginx
 # Equivalente a: didstopia/base:nodejs-12-steamcmd-ubuntu-18.04
 
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
-LABEL maintainer="b3lerofonte <angel200391@gmail.com>"
+LABEL maintainer="b3lerofonte"
 
 # ============================================
 # VARIABLES Y CONFIGURACIÓN INICIAL
@@ -15,8 +15,8 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV TERM=xterm
 ENV TZ=Etc/UTC
-ENV PGID=1001
-ENV PUID=1001
+ENV PGID=1000
+ENV PUID=1000
 
 # ============================================
 # INSTALACIÓN BASE
@@ -40,13 +40,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/* && \
     localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
-# Crear usuario (usa IDs diferentes ya que 1000 está ocupado en Ubuntu 24.04)
-RUN groupadd --system --gid 1001 docker && \
+# Crear usuario docker
+RUN groupadd --system --gid 1000 docker && \
     useradd \
         --create-home \
         --home /app \
-        --uid 1001 \
-        --gid 1001 \
+        --uid 1000 \
+        --gid 1000 \
         --groups users \
         --shell /bin/bash \
         docker && \
