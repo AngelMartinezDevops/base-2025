@@ -1,5 +1,7 @@
 # 🐳 Base Docker Image - Ubuntu 22.04 + Node.js 20 + SteamCMD
 
+> 🌍 [English version available](README_EN.md)
+
 Imagen base modernizada para servidores de juegos, específicamente optimizada para Rust Server.
 
 ## 📦 Componentes Incluidos
