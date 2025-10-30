@@ -24,11 +24,8 @@ Imagen base modernizada para servidores de juegos, específicamente optimizada p
 ## 🏷️ Tags Disponibles
 
 ```bash
-# Última versión
-docker pull angelmartinezdevops/base:latest
-
-# Tag específico
-docker pull angelmartinezdevops/base:nodejs-20-steamcmd-ubuntu-24.04
+# Tag con versiones específicas
+docker pull b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04
 ```
 
 ## 🚀 Uso
@@ -36,7 +33,7 @@ docker pull angelmartinezdevops/base:nodejs-20-steamcmd-ubuntu-24.04
 ### Como Imagen Base para tu Dockerfile
 
 ```dockerfile
-FROM angelmartinezdevops/base:nodejs-20-steamcmd-ubuntu-24.04
+FROM b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04
 
 # Tu configuración aquí
 COPY mi-app /app/
@@ -51,7 +48,7 @@ CMD ["node", "server.js"]
 ```bash
 git clone https://github.com/AngelMartinezDevops/base-2025.git
 cd base-2025
-docker build -t angelmartinezdevops/base:latest .
+docker build -t b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04 .
 ```
 
 ## 📊 Especificaciones
@@ -113,7 +110,7 @@ Esta imagen base está diseñada para ser usada con:
 - [rust-server-2025](https://github.com/AngelMartinezDevops/rust-server-2025)
 
 ```dockerfile
-FROM angelmartinezdevops/base:nodejs-20-steamcmd-ubuntu-24.04
+FROM b3lerofonte/base:nodejs-20-steamcmd-ubuntu-24.04
 
 # Configuración específica del servidor Rust
 COPY apps/ /app/
@@ -128,7 +125,7 @@ COPY scripts/ /app/
 
 ## 🔗 Enlaces Útiles
 
-- **Docker Hub**: https://hub.docker.com/r/angelmartinezdevops/base
+- **Docker Hub**: https://hub.docker.com/r/b3lerofonte/base
 - **GitHub**: https://github.com/AngelMartinezDevops/base-2025
 - **Rust Server**: https://github.com/AngelMartinezDevops/rust-server-2025
 
@@ -138,8 +135,9 @@ MIT License - Ver LICENSE.md
 
 ## 👨‍💻 Autor
 
-**AngelMartinezDevops**
+**b3lerofonte**
 - GitHub: [@AngelMartinezDevops](https://github.com/AngelMartinezDevops)
+- Docker Hub: [b3lerofonte](https://hub.docker.com/u/b3lerofonte)
 - Email: angel200391@gmail.com
 
 ## 🙏 Créditos

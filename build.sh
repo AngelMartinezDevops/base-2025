@@ -5,33 +5,29 @@ echo "🏗️  Construyendo imagen base..."
 echo ""
 
 # Información
-IMAGE_NAME="angelmartinezdevops/base"
-TAG_MAIN="nodejs-20-steamcmd-ubuntu-24.04"
-TAG_LATEST="latest"
+IMAGE_NAME="b3lerofonte/base"
+TAG="nodejs-20-steamcmd-ubuntu-24.04"
 
 # Construir con múltiples tags
 echo "📦 Construyendo imagen: ${IMAGE_NAME}"
 echo ""
 
 docker build \
-  -t "${IMAGE_NAME}:${TAG_MAIN}" \
-  -t "${IMAGE_NAME}:${TAG_LATEST}" \
+  -t "${IMAGE_NAME}:${TAG}" \
   .
 
 if [ $? -eq 0 ]; then
     echo ""
     echo "✅ Imagen construida exitosamente!"
     echo ""
-    echo "📋 Tags creados:"
-    echo "   - ${IMAGE_NAME}:${TAG_MAIN}"
-    echo "   - ${IMAGE_NAME}:${TAG_LATEST}"
+    echo "📋 Tag creado:"
+    echo "   - ${IMAGE_NAME}:${TAG}"
     echo ""
     echo "🐳 Para subir a Docker Hub:"
-    echo "   docker push ${IMAGE_NAME}:${TAG_MAIN}"
-    echo "   docker push ${IMAGE_NAME}:${TAG_LATEST}"
+    echo "   docker push ${IMAGE_NAME}:${TAG}"
     echo ""
     echo "🧪 Para probar:"
-    echo "   docker run -it ${IMAGE_NAME}:latest bash"
+    echo "   docker run -it ${IMAGE_NAME}:${TAG} bash"
 else
     echo ""
     echo "❌ Error al construir la imagen"
